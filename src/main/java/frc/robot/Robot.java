@@ -8,7 +8,10 @@ import com.revrobotics.CANSparkBase.IdleMode;
 import com.revrobotics.CANSparkBase.SoftLimitDirection;
 
 import edu.wpi.first.wpilibj.TimedRobot;
+import edu.wpi.first.wpilibj.Timer;
 import edu.wpi.first.wpilibj.XboxController;
+import edu.wpi.first.wpilibj.drive.DifferentialDrive;
+import edu.wpi.first.wpilibj.motorcontrol.PWMSparkMax
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import edu.wpi.first.wpilibj2.command.Command;
 import edu.wpi.first.wpilibj2.command.CommandScheduler;
@@ -55,7 +58,9 @@ public class Robot extends TimedRobot {
 
   @Override
   public void robotInit() {
-
+//code for drive 
+private final PWMSparkMax m_rightDrive = new PWMSparkMax(channel:0);
+private final XboxController m_controller = new XboxController(port:0);
     //initla conditions for the arm
     armYAxis.setInverted(true);
     armYAxis.setIdleMode(IdleMode.kBrake);
